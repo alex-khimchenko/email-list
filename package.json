@@ -6,7 +6,8 @@
     "url": "https://github.com/alex-khimchenko/email-list.git"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha --compilers coffee:coffee-script/register"
   },
   "dependencies": {
     "body-parser": "^1.14.0",
@@ -17,6 +18,10 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.1.8",
     "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
   },
   "license": "MIT"
 }

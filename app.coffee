@@ -11,6 +11,7 @@ config = require('./config.coffee')
 # Controllers
 
 homeController = require('./controllers/home')
+customerController = require('./controllers/customer')
 
 # Create Express server.
 
@@ -40,6 +41,11 @@ app.use express.static(path.join(__dirname, 'public'), maxAge: 31557600000)
 # Primary app routes.
 
 app.get '/', homeController.index
+app.get '/customer', customerController.getCustomer
+app.get '/customers', customerController.getCustomers
+app.post '/createCustomer', customerController.createCustomer
+app.post '/updateCustomer', customerController.updateCustomer
+app.post '/removeCustomer', customerController.removeCustomer
 
 # Start Express server.
 
