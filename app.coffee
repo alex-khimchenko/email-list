@@ -5,13 +5,26 @@ bodyParser = require('body-parser')
 logger = require('morgan')
 methodOverride = require('method-override')
 path = require('path')
+mongoose = require('mongoose')
+config = require('./config.coffee')
 
 # Controllers
+
 homeController = require('./controllers/home')
 
 # Create Express server.
 
 app = express()
+
+# Connect to MongoDB.
+
+mongoose.connect config.db
+mongoose.connection.on 'error', ->
+  console.log 'MongoDB Connection Error. Please make sure that MongoDB is running.'
+  process.exit 1
+
+mongoose.connection.on 'connected', ->
+  console.log 'MongoDB connected'
 
 # Express configuration.
 
