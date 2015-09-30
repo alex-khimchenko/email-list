@@ -1,0 +1,22 @@
+{
+  "name": "email-list",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alex-khimchenko/email-list.git"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "coffee-script": "^1.10.0",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "less": "^2.5.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.8",
+    "morgan": "^1.6.1"
+  },
+  "license": "MIT"
+}
